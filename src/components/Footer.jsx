@@ -31,10 +31,9 @@ export const Footer = () => {
 
   const socialLinks = [
     { icon: Mail, href: "mailto:mahatsangy.rjl@gmail.com", label: "Email" },
-    { icon: "GH", href: "#", label: "GitHub" },
-    { icon: "LI", href: "#", label: "LinkedIn" },
-    { icon: "TW", href: "#", label: "Twitter" },
-    {icon: Instagram, href: "#", label: "Instagram"}
+    { icon: "GH", href: "https://github.com/Mahatsangy667", label: "GitHub" },
+    { icon: "LI", href: "https://www.linkedin.com/in/mahatsanginohary-rajoelison/", label: "LinkedIn" },
+    {icon: Instagram, href: "https://www.instagram.com/mahatsangy667?igsh=a2t3aTc5Ym4zOHQ4", label: "Instagram"}
   ];
 
   return (
