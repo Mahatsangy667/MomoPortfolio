@@ -17,29 +17,25 @@ export const ThemeToggle = () => {
   }, []);
 
   const toggleTheme = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDarkMode(true);
-    }
+    document.documentElement.classList.toggle("dark");
+    const newTheme = isDarkMode ? "light" : "dark";
+    localStorage.setItem("theme", newTheme);
+    setIsDarkMode(!isDarkMode);
   };
 
   return (
     <button
       onClick={toggleTheme}
+      aria-label="Toggle theme"
       className={cn(
-        "fixed max-sm:hidden top-5 right-5 z-100 p-2 rounded-full transition-colors duration-300",
-        "focus:outlin-hidden"
+        "p-2 rounded-full transition-all duration-300",
+        "hover:bg-primary/10 focus:outline-none"
       )}
     >
       {isDarkMode ? (
-        <Sun className="h-6 w-6 text-yellow-300" />
+        <Sun className="w-5 h-5 text-yellow-300" />
       ) : (
-        <Moon className="h-6 w-6 text-blue-900" />
+        <Moon className="w-5 h-5 text-blue-900 dark:text-blue-300" />
       )}
     </button>
   );
